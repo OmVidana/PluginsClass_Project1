@@ -18,35 +18,41 @@ public class Juego : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             //Sirven para lo mismo 
-            if (transform.position.z < 5)
+            if (transform.position.z < 15)
             {
-                transform.position += new Vector3(0, 0, 0.7f) * Time.deltaTime;
+                transform.position += new Vector3(0, 0, 3f) * Time.deltaTime;
             }
             //transform.Translate(Vector3.forward*Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            //Sirven para lo mismo 
-            if (transform.position.x > -5)
-            {
-                transform.position += new Vector3(-0.7f, 0, 0) * Time.deltaTime;
-            }
-            //transform.Translate(Vector3.forward*Time.deltaTime);
+            transform.position += new Vector3(-2f, 0, 0) * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.S))
         {
             //Sirven para lo mismo 
-            if (transform.position.z > -5)
+            if (transform.position.z > 1.4)
             {
-                transform.position += new Vector3(0, 0, -0.7f) * Time.deltaTime;
+                transform.position += new Vector3(0, 0, -3f) * Time.deltaTime;
             }
             //transform.Translate(Vector3.forward*Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            if (transform.position.x < 5)
+            transform.position += new Vector3(2f, 0, 0) * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (transform.position.y < 5)
             {
-                transform.position += new Vector3(0.7f, 0, 0) * Time.deltaTime;
+                transform.position += new Vector3(0, 5f, 0) * Time.deltaTime;
+            }
+        }
+        else
+        {
+            if (transform.position.z > 1.4)
+            {
+                transform.position += new Vector3(0, 0, -1.5f) * Time.deltaTime;
             }
         }
     }
