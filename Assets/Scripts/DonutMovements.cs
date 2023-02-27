@@ -17,14 +17,17 @@ public class Juego : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            if (transform.position.z < 15)
+            if (transform.position.z < 16.9)
             {
                 transform.position += new Vector3(0, 0, 2.5f) * Time.deltaTime;
             }
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position += new Vector3(-3f, 0, 0) * Time.deltaTime;
+            if (transform.position.x > -1.6)
+            {
+                transform.position += new Vector3(-3f, 0, 0) * Time.deltaTime;
+            }
         }
         if (Input.GetKey(KeyCode.S))
         {
@@ -35,7 +38,10 @@ public class Juego : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += new Vector3(3f, 0, 0) * Time.deltaTime;
+            if (transform.position.x < 1.6)
+            {
+                transform.position += new Vector3(3f, 0, 0) * Time.deltaTime;
+            }
         }
         if (Input.GetKey(KeyCode.Space))
         {
