@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DonutAnimations : MonoBehaviour
 {
@@ -16,13 +18,19 @@ public class DonutAnimations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        if (DonutCollitions.livesCharacter > 0 && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
         {
             animator.GetComponent<Animator>().runtimeAnimatorController = animations[1];
         }
-        else
+
+        if (DonutCollitions.livesCharacter > 0 && (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D)))
         {
             animator.GetComponent<Animator>().runtimeAnimatorController = animations[0];
+        }
+
+        if (DonutCollitions.livesCharacter == 0)
+        {
+            animator.GetComponent<Animator>().runtimeAnimatorController = animations[3];
         }
     }
 }

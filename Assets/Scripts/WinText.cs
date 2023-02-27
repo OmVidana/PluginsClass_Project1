@@ -21,5 +21,10 @@ public class WinText : MonoBehaviour
         {
             SceneManager.LoadScene("game");
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }
