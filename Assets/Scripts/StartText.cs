@@ -23,5 +23,10 @@ public class StartText : MonoBehaviour
         {
             SceneManager.LoadScene("game");
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }

@@ -24,7 +24,7 @@ public class GenerateDemons : MonoBehaviour
     {
         while (true)
         {
-            prefabs = (Rigidbody)Instantiate(prefab, new Vector3(Random.Range(-1.5f, 1.5f), 1.5f, 15f), Quaternion.Euler(0f, 180f, 0f));
+            prefabs = (Rigidbody)Instantiate(prefab, new Vector3(Random.Range(-1.4f, 1.4f), 1.5f, 15f), Quaternion.Euler(0f, 180f, 0f));
             prefabs.AddComponent<PrefabPath>();
             yield return new WaitForSeconds(time);
         }

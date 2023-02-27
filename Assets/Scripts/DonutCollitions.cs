@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class DonutCollitions : MonoBehaviour
 {
@@ -17,24 +16,23 @@ public class DonutCollitions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        StartCoroutine(deathTimer());
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "Demon(Clone)")
         {
             Destroy(other.gameObject);
-            livesCharacter--;
-            points++;
-            if(livesCharacter < 1)
+            if ((livesCharacter > 0) && (livesCharacter <= 3))
             {
-                SceneManager.LoadScene("lose");
+                livesCharacter--;
+                points++;
             }
         }
         if (other.gameObject.name == "Star(Clone)")
         {
             Destroy(other.gameObject);
-            if (livesCharacter < 3)
+            if ((livesCharacter > 0) && (livesCharacter < 3))
             {
                 livesCharacter++;
             }
@@ -42,6 +40,17 @@ public class DonutCollitions : MonoBehaviour
         if (other.gameObject.name == "FloorEnd")
         {
             SceneManager.LoadScene("win");
+        }
+    }
+    IEnumerator deathTimer()
+    {
+        if (DonutCollitions.livesCharacter == 0)
+        {
+            if (livesCharacter < 1)
+            {
+                yield return new WaitForSeconds(3f);
+                SceneManager.LoadScene("lose");
+            }
         }
     }
 }

@@ -31,7 +31,7 @@ public class Juego : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.S))
         {
-            if (transform.position.z > 1.4)
+            if (transform.position.z > 1.5)
             {
                 transform.position += new Vector3(0, 0, -3f) * Time.deltaTime;
             }
@@ -52,7 +52,7 @@ public class Juego : MonoBehaviour
         }
         else
         {
-            if (transform.position.z > 1.4)
+            if (transform.position.z > 1.5)
             {
                 transform.position += new Vector3(0, 0, -1.5f) * Time.deltaTime;
             }

@@ -15,7 +15,7 @@ public class PrefabPath : MonoBehaviour
     {
         if (transform.position.z > 1)
         {
-            transform.position += new Vector3(0, 0, Random.Range(-3f, -6f)) * Time.deltaTime;
+            transform.position += new Vector3(0, 0, Random.Range(-3.5f, -7f)) * Time.deltaTime;
         }
         if (transform.position.z <= 1)
         {
